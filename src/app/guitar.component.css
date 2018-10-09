@@ -1,0 +1,87 @@
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.guitar {
+	background-color: black;
+	color: white;
+	width: 200px;
+	height: 300px;
+	transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.guitar:hover {
+	color: white;
+	box-shadow: 2px 5px 10px red;
+	transform: scale(1.01, 1.01);
+}
+
+.card-body {
+	padding: 0 10px 10px 10px;
+}
+
+.card-body p {
+	margin: 0;
+}
+
+.footer-container {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	height: 40px;
+	
+}
+
+.footer {
+	width: 200px;
+	padding: 10px;
+	border: none;
+	background: none;
+	font-size: 12px;
+}
+
+.model {
+	height: 54px;
+	overflow: hidden;
+}
+
+.make {
+	margin-bottom: 8px;
+}
+
+.site {
+	margin-bottom: 8px;
+}
+
+p {
+	font-size: 12px;
+}
+
+.card {
+	border: none;
+}
+
+/* Mobile only (bootstrap < sm) */
+@media only screen and (max-width: 576px) {
+
+	.guitar {
+		width: 300px;
+		height: 450px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	.footer {
+		width: 300px;
+		font-size: 18px;
+	}
+
+	.card-body {
+		padding: 0 15px 15px 15px;
+	}
+
+}

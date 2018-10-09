@@ -1,0 +1,23 @@
+<div class="about-container">
+
+	<h4>About This Site</h4>
+
+	<p>We want the search for your next premium guitar to be fun and easy!  That's why we created this site.  We pull guitars from the top guitar retailers in America, and make it easy to search them all in one spot.</p>
+
+	<h4>Websites We Pull From - Thank You!</h4>
+	
+	<div class="d-flex flex-wrap website-container">
+		<div *ngFor="let site of sites$ | async" class="image-container">
+			<a [href]="site.BaseURL"><img [src]="site.LogoURL" 
+				[class.white-bkg]="site.BaseURL === 'http://briansguitars.com/' || site.BaseURL === 'https://www.makenmusic.com/' || site.BaseURL === 'https://ish.guitars/'">
+			</a>
+		</div>
+	</div>
+
+	<h4>Contact Us</h4>
+
+	<p>If you have any questions or comments about this website, email us at: <a href="mailto:admin@axequest.com">admin@axequest.com</a></p>
+
+	<a routerLink="/Search" routerLinkActive="active">Back to Search</a>
+
+</div>

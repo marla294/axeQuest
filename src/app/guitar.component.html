@@ -1,0 +1,24 @@
+<a [href]="guitar.link" target="_blank">
+<div class="guitar-container">
+		<div class="card">
+			<div class="guitar">
+				<guitar-image [guitar]="guitar"></guitar-image>
+				<div class="card-body">
+					<h4 class="card-title make">{{guitar.make | uppercase}}</h4>
+					<p class="card-text model">{{guitar.model}}</p>
+					<p class="card-text site"><i>{{guitar.site}}</i></p>
+				</div>
+				<div class="footer-container">
+					<div class="footer">
+						<div class="float-left">
+							{{guitar.priceStr}}
+						</div>
+						<div class="float-right">
+							{{guitar.dateListed}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+</a>

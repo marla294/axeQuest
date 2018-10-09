@@ -1,0 +1,84 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2 sidenav desktop">
+			<h5>FILTERS</h5>
+			<div class="form-check">
+				<label class="form-check-label" for="electric">
+					<input class="form-check-input" type="checkbox" id="electric" value="electricFilter" [checked]="this.getElectric()" (click)="this.toggleElectric()">Electric
+				</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label" for="acoustic">
+					<input class="form-check-input" type="checkbox" id="acoustic" value="acousticFilter" [checked]="this.getAcoustic()" (click)="this.toggleAcoustic()">Acoustic
+				</label>
+			</div>
+			<br>
+			<h5>INCLUDE</h5>
+			<div class="form-check">
+				<label class="form-check-label" for="bass">
+					<input class="form-check-input" type="checkbox" id="bass" value="bassFilter" [checked]="this.getBass()" (click)="this.toggleBass()">Bass
+				</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label" for="lefty">
+					<input class="form-check-input" type="checkbox" id="lefty" value="leftyFilter" [checked]="this.getLefty()" (click)="this.toggleLefty()">Left-Handed
+				</label>
+			</div>
+			<div class="form-check">
+				<label class="form-check-label" for="relic">
+					<input class="form-check-input" type="checkbox" id="relic" value="relicFilter" [checked]="this.getRelic()" (click)="this.toggleRelic()">Relic
+				</label> 
+			</div>
+		</div>
+		<div class="col-sm-10">
+			<div class="dropdown mobile">
+				<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">FILTERS</button>
+				<div class="dropdown-menu">
+					<h6 class="dropdown-header">FILTERS</h6>
+					<button type="button" class="dropdown-item">
+						<label class="form-check-label" for="electric">
+							<input class="form-check-input" type="checkbox" id="electric" value="electricFilter" [checked]="this.getElectric()" (click)="this.toggleElectric()">Electric
+						</label> 
+					</button>
+					<button type="button" class="dropdown-item">
+						<label class="form-check-label" for="acoustic">
+							<input class="form-check-input" type="checkbox" id="acoustic" value="acousticFilter" [checked]="this.getAcoustic()" (click)="this.toggleAcoustic()">Acoustic
+						</label>
+					</button>
+					<div class="dropdown-divider"></div>
+					<h6 class="dropdown-header">INCLUDE</h6>
+					<button type="button" class="dropdown-item">
+						<label class="form-check-label" for="bass">
+							<input class="form-check-input" type="checkbox" id="bass" value="bassFilter" [checked]="this.getBass()" (click)="this.toggleBass()">Bass
+						</label>
+					</button>
+					<button type="button" class="dropdown-item">
+						<label class="form-check-label" for="lefty">
+							<input class="form-check-input" type="checkbox" id="lefty" value="leftyFilter" [checked]="this.getLefty()" (click)="this.toggleLefty()">Left-Handed
+						</label> 
+					</button>
+					<button type="button" class="dropdown-item">
+						<label class="form-check-label" for="relic">
+							<input class="form-check-input" type="checkbox" id="relic" value="relicFilter" [checked]="this.getRelic()" (click)="this.toggleRelic()">Relic
+						</label> 
+					</button>
+				</div>
+			</div>
+
+			<div *ngIf="searchComplete$ | async">
+				<h5 class="results-label">{{resultsLabel | uppercase}}</h5>
+				<h6 class="num-results">{{numResults}} RESULTS</h6>
+			</div>
+			<div *ngIf="!(searchComplete$ | async)">
+				<h5 class="results-label">LOADING RESULTS...</h5>
+			</div>
+			<div *ngIf="searchComplete$ | async as searchComplete" [@guitarLoadAnimation]="searchComplete.toString()">
+				<div class="d-flex flex-wrap results">
+					<div *ngFor="let guitar of guitars" class="guitar">
+						<guitar [guitar]="guitar"></guitar>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

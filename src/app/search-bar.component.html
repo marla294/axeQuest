@@ -1,0 +1,50 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-9">
+			<div class="top-bar">
+				<a routerLink="/About" routerLinkActive="active"><div class="logo">
+					<p>AXE QUEST</p>
+				</div></a>
+				<div class="buttons mobile">
+					<div class="btn-group btn-group-toggle" data-toggle="buttons">
+						<label class="btn btn-secondary" (click)="this.onButtonClick('New Arrivals')"
+						[class.active]="this.searchBy === 'New Arrivals'">
+							<input type="radio" name="NewArrivals" id="NewArrivals" autocomplete="off" checked>NEW ARRIVALS
+						</label>
+						<label class="btn btn-secondary" (click)="this.onButtonClick('Inventory')"
+						[class.active]="this.searchBy === 'Inventory'">
+							<input type="radio" name="Inventory" id="Inventory" autocomplete="off">INVENTORY
+						</label>
+					</div>
+				</div>
+
+				<div class="searchbar">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="buttons desktop">
+								<div class="btn-group btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-secondary" (click)="this.onButtonClick('New Arrivals')"
+									[class.active]="this.searchBy === 'New Arrivals'">
+										<input type="radio" name="NewArrivals" id="NewArrivals" autocomplete="off" checked>NEW
+									</label>
+									<label class="btn btn-secondary" (click)="this.onButtonClick('Inventory')"
+									[class.active]="this.searchBy === 'Inventory'">
+										<input type="radio" name="Inventory" id="Inventory" autocomplete="off">INVENTORY
+									</label>
+								</div>
+							</div>
+						</div>
+						<input type="text" class="form-control" [placeholder]="'Search ' + this.searchBy + '...'" #search (keyup)="onEnter($event)">
+						<div class="input-group-append">
+							<span class="input-group-text btn btn-secondary icon" (click)="onSearch(search.value)"><i class="fas fa-search"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-1">
+		</div>
+	</div>
+</div>

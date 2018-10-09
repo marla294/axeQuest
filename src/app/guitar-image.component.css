@@ -1,0 +1,46 @@
+.image-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 200px;
+	height: 135px;
+	overflow: hidden;
+	margin: 10px;
+}
+.image {
+	height: auto;
+	max-width: 200px;
+	max-height: 135px;
+}
+
+.crop {
+	height: 270px;
+	max-width: 200px;
+	margin-bottom: 135px;
+}
+
+a {
+	z-index: 1;
+}
+
+/* Mobile only (bootstrap < sm) */
+@media only screen and (max-width: 576px) {
+
+.image-container {
+	max-width: 300px;
+	height: 202.5px;
+	margin: 15px;
+}
+
+.image {
+	max-width: 300px;
+	max-height: 202.5px;
+}
+
+.crop {
+	height: 405px;
+	max-width: 300px;
+	margin-bottom: 202.5px;
+}
+
+}
